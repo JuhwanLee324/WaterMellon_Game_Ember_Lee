@@ -3,7 +3,7 @@ var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
-    Wolrd = Matter.Wolrd;
+    World = Matter.World;
 
 // 엔진 선언
 const engine = Engine.create();
@@ -21,6 +21,34 @@ const render = Render.create({
     },
 })
 
+// 벽 배치를 위한 world 선언
+const world = engine.world;
+
+// 벽 생성
+const leftwall = Bodies.rectangle(15, 395, 30, 790, {
+
+    isStatic: true,
+    render: { fillStyle: '#E6B143'}
+})
+const rightwall = Bodies.rectangle(605, 395, 30, 790, {
+
+    isStatic: true,
+    render: { fillStyle: '#E6B143'}
+})
+const ground = Bodies.rectangle(310, 820, 620, 60, {
+
+    isStatic: true,
+    render: { fillStyle: '#E6B143'}
+})
+const topline = Bodies.rectangle(310, 150, 620, 2, {
+
+    isStatic: true,
+    render: { fillStyle: '#E6B143'}
+})
+
+// 벽 배치
+World.add(world, [leftwall,rightwall,ground,topline]);
+
 // 테스트 실행
-Render .run(render);
-Runner .run(engine);
+Render.run(render);
+Runner.run(engine);
