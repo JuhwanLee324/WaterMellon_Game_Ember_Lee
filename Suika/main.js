@@ -15,7 +15,7 @@ const render = Render.create({
     element: document.body,
     options: {
         wireframes: false, // 기본값은 true인데 true일 경우 이미지 적용이 안됨
-        backgruond: '#F7F4C8', // 배경색 지정
+        background: '#F7F4C8', // 배경색 지정
         width: 620,
         height: 850,
     },
