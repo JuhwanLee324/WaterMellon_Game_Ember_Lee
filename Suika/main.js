@@ -1,0 +1,26 @@
+// 모듈 불러오기
+var Engine = Matter.Engine,
+    Render = Matter.Render,
+    Runner = Matter.Runner,
+    Bodies = Matter.Bodies,
+    Wolrd = Matter.Wolrd;
+
+// 엔진 선언
+const engine = Engine.create();
+
+// 랜더 선언
+const render = Render.create({
+    engine,
+    // 어디에 그릴 것인지
+    element: document.body,
+    options: {
+        wireframes: false, // 기본값은 true인데 true일 경우 이미지 적용이 안됨
+        backgruond: '#F7F4C8', // 배경색 지정
+        width: 620,
+        height: 850,
+    },
+})
+
+// 테스트 실행
+Render .run(render);
+Runner .run(engine);
